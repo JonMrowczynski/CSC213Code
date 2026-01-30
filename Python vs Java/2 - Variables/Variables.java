@@ -56,8 +56,11 @@ public class Variables {
         
         // MY_CONSTANT = 8; // This would cause a compilation error if commented out.
 
-        BigInteger bigInt = new BigInteger("2395824647389459825948572985729845394856298756730986730986730598637058");
-        System.out.println(bigInt);
+        BigInteger bigInt = new BigInteger("239582464738945982594857298572984539485629875648579348673958673958637730986730986730598637058");
+
+        System.out.println(bigInt.add(bigInt));
         System.out.println();
+
+        System.out.println(Math.sqrt(4));
     }
 }
