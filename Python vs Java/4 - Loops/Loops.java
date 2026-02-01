@@ -18,6 +18,7 @@ public class Loops {
         indexedForLoopExample(array);
 
         continueAndBreakExample();
+        
         doWhileLoopExample();
 
         streamExample(array);
