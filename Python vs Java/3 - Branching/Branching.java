@@ -50,6 +50,7 @@ public class Branching {
 
         System.out.println();
         // Logical operators include && (and), || (or), and ! (not)
+        // These are different than the bitwise operators: &, |, and ~.
         System.out.println("false && false: " + (false && false)); // The expression on the right is dead code due to short-circuiting.
         System.out.println("false && true: " + (false && true)); // The expression on the right is dead code due to short-circuiting.
         System.out.println("true && false: " + (true && false));
