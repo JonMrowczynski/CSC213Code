@@ -5,6 +5,7 @@
  * Java Version: 21.0.9
  */
 public class Branching {
+
     public static void main(String[] args) {
         // Boolean values are "true" or "false"
 
@@ -25,8 +26,18 @@ public class Branching {
         var iAmDependent = (iAmTrue) ? 1 : 0; // Java has conditional expressions commonly used for assignments.
         System.out.println(iAmDependent);
 
-        // Java has a more standard switch expression/statement that has grow relatively powerful with recent versions.
-        // The switch expression
+        switchExpressionExample();
+        switchStatementExample();
+
+        andExamples();
+        orExamples();
+        notExamples();
+    }
+
+    /**
+     * Java jas more standard switch expression that has grown relatively powerful with recent versions.
+     */
+    private static void switchExpressionExample() {
         var pattern = "Set me to another String";
         switch(pattern) {
             case "Hello":
@@ -39,31 +50,61 @@ public class Branching {
                 System.out.println("This is run if pattern doesn't match any other case.");
                 // Don't need to explicitly break default.
         }
+    }
 
-        // Switch statement
+    /**
+     * Note that a switch statement doesn't use breaks! This is done for you behind the scenes. switch statements can also work
+     * on other data types, not just Strings.
+     */
+    private static void switchStatementExample() {
+        var pattern = "Set me to something";
         var result = switch(pattern) {
-            case "Hello" -> 1; // Notice don't need to explicitly break! That is done for you.
+            case "Hello" -> 1;
             case "World!" -> 2;
             default -> 3;
         };
         System.out.println(result); // The value of result depends on the value of pattern!
+    }
 
-        System.out.println();
-        // Logical operators include && (and), || (or), and ! (not)
-        // These are different than the bitwise operators: &, |, and ~.
-        System.out.println("false && false: " + (false && false)); // The expression on the right is dead code due to short-circuiting.
-        System.out.println("false && true: " + (false && true)); // The expression on the right is dead code due to short-circuiting.
-        System.out.println("true && false: " + (true && false));
-        System.out.println("true && true: " + (true && true));
-        System.out.println();
+    /**
+     * Shows logical results using the and '&&' operator. The first two boolean expressions have dead code on the right due to
+     * short-circuiting. This shouldn't be confused with the bitwise and '&'.
+     */
+    private static void andExamples() {
+        System.out.printf("""
+                
+                And Examples:
+                false && false: %b
+                false && true: %b
+                true %% false: %b
+                true && true: %b
+                """, false && false, false && true, true && false, true && true);
+    }
 
-        System.out.println("false || false: " + (false || false));
-        System.out.println("false || true: " + (false || true));
-        System.out.println("true || false: " + (true || false)); // The expression on the right is dead code due to short-circuiting.
-        System.out.println("true || true: " + (true || true)); // The expression on the right is dead code due to short-circuiting.
-        System.out.println();
+    /**
+     * Shows logical results using the or '||' operator. The last two boolean expressions have dead code on the right due to
+     * short-circuiting. This shouldn't be confused with the bitwise or '|'.
+     */
+    private static void orExamples() {
+        System.out.printf("""
 
-        System.out.println("!false: " + !false);
-        System.out.println("!true: " + !true);
+                Or Examples:
+                false || false: %b
+                false || true: %b
+                true || false: %b
+                true || true: %b
+                """, false || false, false || true, true || false, true || true);
+    }
+
+    /**
+     * Shows logical results using the not '!' operator. This shouldn't be confused with the bitwise not '~'.
+     */
+    private static void notExamples() {
+        System.out.printf("""
+
+                Not Examples:
+                !false: %b
+                !true: %b
+                """, !false, !true);
     }
 }
