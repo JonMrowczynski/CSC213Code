@@ -55,15 +55,15 @@ public class Loops {
 
     /**
      * An indexed for loop over any array. Good general purpose use, but more verbose. Can alter the contents of the array!
+     * These must contain 3 statements (listed from left to right):
+     * 1. The loop variable initialization statement.
+     * 2. The loop condition.
+     * 3. The loop variable update statement.
      * 
      * @param array the array to be demoed
      */
     private static void indexedForLoopExample(int[] array) {
         System.out.println("Indexed For Loop Example:");
-        // But can also have genuine indexed for loops! These contain 3 statements in the ()
-        // 1. The loop variable initialization statement.
-        // 2. The loop condition.
-        // 3. The loop variable update statement
         for (int i = 0; i < array.length; ++i) {
             System.out.println(array[i]);
             if (array[i] == 2) {
@@ -75,10 +75,12 @@ public class Loops {
         System.out.println();
     }
 
+    /**
+     * Can continue if you want to stop executing just an iteration of the loop, but not exit out of it. Can "break" if you want
+     * to exit the loop entirely.
+     */
     private static void continueAndBreakExample() {
         System.out.println("Continue and Break Example:");
-       // Can "continue" if you want to stop executing just an iteration of the loop.
-        // Can "break" if you want to exit the loop entirely.
         for (int i = 0; i < 100; ++i) {
             if (i > 3 || i < 90) { continue; } // This skips the printing if i == 1!
             if (i == 93) { break; }
