@@ -21,7 +21,7 @@ public class Loops {
         
         doWhileLoopExample();
 
-        streamExample(array);
+        streamExample(array); // O_o!?
     }
 
     /**
@@ -67,7 +67,7 @@ public class Loops {
         for (int i = 0; i < array.length; ++i) {
             System.out.println(array[i]);
             if (array[i] == 2) {
-                array[i] = -1; // Can change the value of an item because accessing actual item.
+                array[i] = -1; // Can change the value of an item because accessing actual item rather than a copy.
                 System.out.println(array[i]);
             }
         }
