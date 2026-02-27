@@ -15,6 +15,7 @@ public class RecordExample {
         System.out.println("Comparing SpaceTimePoints: ");
         final var point1 = new SpaceTimePoint(1, 1, 1, 0);
         System.out.println("point1: " + point1);
+        System.out.println("Have to call getter: " + point1.getX() + " to access field values.");
         final var point2 = new SpaceTimePoint(1, 1, 1, 0);
         final var point3 = new SpaceTimePoint(1, 2, 3, 4);
         System.out.println("point1.equals(point2) ? -> " + point1.equals(point2));
@@ -25,12 +26,11 @@ public class RecordExample {
         System.out.println("Comparing SpaceTimePointRecords: ");
         final var point1 = new SpaceTimePointRecord(1, 1, 1, 0);
         System.out.println("point1: " + point1);
-        System.out.println(point1.x);
+        System.out.println("Can either call field: " + point1.x + " or the getter: " + point1.x() + " to access field values since immutable!");
         final var point2 = new SpaceTimePointRecord(1, 1, 1, 0);
         final var point3 = new SpaceTimePointRecord(1, 2, 3, 4);
         System.out.println("point1.equals(point2) ? -> " + point1.equals(point2));
         System.out.println("point1.equals(point3) ? -> " + point1.equals(point3));
-        System.out.println("Can access members either directly: " + point1.x + " or through getter: " + point1.x() + " since immutable!");
     }
 
     /**
@@ -85,6 +85,26 @@ public class RecordExample {
      * 
      * @author Jon Mrowczynski
      */
-    private static record SpaceTimePointRecord(double x, double y, double z, double t) { }
-s
+    private static record SpaceTimePointRecord(double x, double y, double z, double t) { 
+
+        /**
+         * We can define our own methods inside a record!
+         * 
+         * @return return how far away the {@link SpaceTimPointRecord} is away from the origin!
+         */
+        public double magnitude() { return Math.sqrt(x * x + y * y + z * z); }
+
+        /**
+         * You can also overload the default constructor that Java makes implicitly for records!
+         * 
+         * @param x the x position of the point.
+         * @param y the y position of the point.
+         * @param z the z position of the point.
+         */
+        SpaceTimePointRecord(double x, double y, double z) {
+            this(x, y, z, 0); // Always set time to 0 if JUST given spatial information.
+        }
+
+    }
+
 }

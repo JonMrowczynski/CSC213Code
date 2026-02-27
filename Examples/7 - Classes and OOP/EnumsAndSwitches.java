@@ -48,7 +48,9 @@ public class EnumsAndSwitches {
 
     public static void main(String[] args) {
         System.out.println("Printing all possible values of " + DaySimple.class.getSimpleName() +":");
-        for (var day : DaySimple.values()) { System.out.println(day); }
+        for (var day : DaySimple.values()) { 
+            System.out.println(day + "'s ordinal value is: " + day.ordinal()); 
+        }
         System.out.println();
 
         final var day = DaySimple.MONDAY; // Change me!
@@ -176,7 +178,7 @@ public class EnumsAndSwitches {
         private final String userFriendlyName;
         private final int preference;
 
-        DayComplex(String name, int pref) {
+        private DayComplex(String name, int pref) {
             userFriendlyName = name;
             preference = pref;
         }
