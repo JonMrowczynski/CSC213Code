@@ -1,3 +1,9 @@
+/**
+ * A simple example to show how to time some code in Java. This is a very basic way, and shouldn't be used for benchmarking the
+ * performance of methods. However, it is fine for our simpler purposes.
+ * 
+ * @author Jon Mrowczynski
+ */
 public class TimingExample {
 
     public static void main(String[] args) {

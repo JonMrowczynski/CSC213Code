@@ -3,7 +3,7 @@
  * 
  * @author Jon Mrowczynski
  */
-public class RecordExample {
+public class Records {
 
     public static void main(String[] args) {
         displaySpaceTimePoints();

@@ -2,7 +2,7 @@
  * @author Justin Del Vecchio
  * @author Jon Mrowczynski
  */
-public class MathExamples{
+public class MathExamples {
 
     public static void main(String[] args){
         printFloatingPointNumericErrorExample();

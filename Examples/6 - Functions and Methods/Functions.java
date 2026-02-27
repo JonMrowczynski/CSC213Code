@@ -5,7 +5,7 @@ import java.util.Arrays;
  * 
  * @author Jon Mrowczynski
  */
-public class FunctionsExamples {
+public class Functions {
 
     public static void main(String[] args) {
         // A function call doesn't require an object, for it to be called, just what is passed into it. It can be called
@@ -29,9 +29,9 @@ public class FunctionsExamples {
      * 
      * You can give a function as many parameters as you want, but you should try to keep it to 7 or less.
      */
-    private static void doesNotReturnAnything(/* No parameters, which is fine! */) {
+    private static void doesNotReturnAnything(/* No parameters*/) {
         // Do something here.
-        return; // Can still return!
+        return; // Can still return! Just can't return value.
     }
 
     /**
