@@ -6,8 +6,9 @@ import java.util.List;
 
 /**
  * A few ways of reading data written to files using the {@link Files} utility {@code class}. Data is read from the
- * files that are generated from {@link Writing2File} using {@link Writing2File#writeString(Path, String)},
- * {@link Writing2File#writeLines(Path, List)} and {@link Writing2File#writeStringToRelativePath(Path, String).}
+ * files that are generated from {@link Writing2File} using {@link Writing2File#writeString(Path, String, boolean)},
+ * {@link Writing2File#writeLines(Path, List, boolean)} and
+ * {@link Writing2File#writeStringToRelativePath(Path, String, boolean).}
  *
  * @author Jon Mrowczynski
  */
