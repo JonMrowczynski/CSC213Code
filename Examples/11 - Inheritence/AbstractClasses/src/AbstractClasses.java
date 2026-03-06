@@ -33,7 +33,7 @@ public class AbstractClasses {
 	}
 	
 	// Can use generics to do some crazy stuff with datatypes! More on this later...
-	private static <T extends Shape> void printShapes(LinkedList<T> shapes) {
+	private static void printShapes(LinkedList<? extends Shape> shapes) {
 		System.out.println("Printing Shapes: ");
 		for (var shape : shapes) {
 			final var str = """
