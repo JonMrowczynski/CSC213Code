@@ -19,8 +19,7 @@ public class Writing2File {
 		writingWithExplicitClose(false);
 	}
 	
-	// DO NOT USE THIS. THIS IS LEFT HERE FOR DEMO PURPOSES ONLY.
-	// ////////////////////////////////////////////////////
+	// DO NOT USE THIS. THIS IS LEFT HERE FOR DEMO PURPOSES ONLY. /////////////////////////////////////////////////////
 	
 	/**
 	 * A basic example of how to write data from a file.
@@ -49,7 +48,7 @@ public class Writing2File {
 		catch (FileNotFoundException e) { throw new RuntimeException(e); }
 	}
 	
-	/// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	/**
 	 * Does the exact same thing as {@link Writing2File#writingWithExplicitClose(boolean)}, but with a
