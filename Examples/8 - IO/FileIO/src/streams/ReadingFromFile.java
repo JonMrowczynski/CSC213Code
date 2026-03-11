@@ -12,7 +12,6 @@ public class ReadingFromFile {
 	private static void read() {
 		try (var scanner = new Scanner(new FileInputStream(Writing2File.FILE_NAME))) {
 			System.out.println(scanner.next());
-			System.out.println(scanner.next());
 		}
 		catch (Exception e) { throw new RuntimeException(e); }
 	}
