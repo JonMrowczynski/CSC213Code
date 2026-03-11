@@ -1,59 +1,17 @@
-package streams;
-
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Arrays;
-import java.util.Scanner;
 
-public class Writing2File {
-	
-	static final String FILE_NAME = "writtenData.txt";
-	
-	public static void main(String[] args) {
-		writingWithExplicitClose();
-	}
-	
-	private static void writingWithExplicitClose() {
-		try {
-			var fos = new FileOutputStream(FILE_NAME);
-			var writer = new PrintWriter(fos);
-			writer.println("Hello World!");
-			writer.close();
-		}
-		catch (FileNotFoundException e) { throw new RuntimeException(e); }
-	}
-	
-	private static void writingWithTryWithResources() {
-		try (var writer = new PrintWriter(new FileOutputStream(FILE_NAME))) {
-			writer.println("Hello World!");
-		}
-		catch (IOException e) { throw new RuntimeException(e); }
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	private static void writingWithExplicitClose(int exceptionNum) {
+public class Exceptions {
+
+    private static final String FILE_NAME = "writtenData.txt";
+
+    public static void main(String[] args) {
+
+    }
+
+    private static void writingWithExplicitClose(int exceptionNum) {
 		PrintWriter writer = null;
 		try {
 			System.out.println("In try block:");
@@ -93,4 +51,5 @@ public class Writing2File {
 		} // Can still add a finally block, but don't need.
 		System.out.println("I am outside:");
 	}
+
 }
