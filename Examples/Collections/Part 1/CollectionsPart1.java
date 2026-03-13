@@ -61,7 +61,7 @@ public class CollectionsPart1 {
      *      - Each node contains a reference to the data and the next node.
      *      - Uses less memory.
      *      - Only can traverse in one direction. -> Inserting/removing at end takes O(n).
-     *  - Double-linked lists (DLL)
+     *  - Doubly-linked lists (DLL)
      *      - Each node contains a reference to the data, the next node, and the previous node.
      *      - Uses more memory.
      *      - Can traverse in BOTH directions! -> Inserting.removing at end takes O(1).
