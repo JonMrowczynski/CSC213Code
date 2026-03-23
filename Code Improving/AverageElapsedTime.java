@@ -1,10 +1,7 @@
 /**
- * 
- * 
  * @author Jon Mrowczynski
- * 
  */
-public class CodeImproving {
+public class AverageElapsedTime {
 
     public static void main(String[] args) {
 		final var numTimes = 3;
