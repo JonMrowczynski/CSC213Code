@@ -9,7 +9,7 @@ public abstract class Shape {
     public abstract double getArea();
     public abstract double getPerimeter();
 
-    Shape(String name) { this.name = name; }
+    protected Shape(String name) { this.name = name; }
 
     public String getName() { return name; }
     public void setName(String newName) { name = newName; }

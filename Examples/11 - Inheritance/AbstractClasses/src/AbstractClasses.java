@@ -29,7 +29,7 @@ public class AbstractClasses {
 		//		rectangles.add(circle); // This would cause a compilation issue.
 		rectangles.add(rectangle);
 		rectangles.add(square);
-		printShapes(rectangles);
+//		printShapes(rectangles);
 	}
 	
 	// Can use generics to do some crazy stuff with datatypes! More on this later...

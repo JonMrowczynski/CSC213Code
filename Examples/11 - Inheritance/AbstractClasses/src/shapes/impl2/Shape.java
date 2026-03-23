@@ -11,7 +11,7 @@ public abstract class Shape {
     public double getArea() { return area; }
     public double getPerimeter() { return perimeter; }
 
-    Shape(String name) { this.name = name; }
+    protected Shape(String name) { this.name = name; }
 
     public String getName() { return name; }
     public void setName(String newName) { name = newName; }
