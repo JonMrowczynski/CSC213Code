@@ -26,7 +26,7 @@ public class AbstractClasses {
 		printShapes(shapes);
 		
 		var rectangles = new LinkedList<Rectangle>();
-		//		rectangles.add(circle); // This would cause a compilation issue.
+//				rectangles.add(circle); // This would cause a compilation issue.
 		rectangles.add(rectangle);
 		rectangles.add(square);
 //		printShapes(rectangles);

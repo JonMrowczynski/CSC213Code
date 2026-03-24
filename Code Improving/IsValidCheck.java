@@ -5,20 +5,20 @@ public class IsValidCheck {
 
     public static void main(String[] args) {
         System.out.println("Null checks:");
-        System.out.println(isValidCheckLong(null));
-        System.out.println(isValidCheckShort(null));
+        System.out.println("\t" + isValidCheckLong(null));
+        System.out.println("\t" + isValidCheckShort(null));
 
         System.out.println();
 
         System.out.println("Empty String checks:");
-        System.out.println(isValidCheckLong("\t \n"));
-        System.out.println(isValidCheckShort("\t \n"));
+        System.out.println("\t" + isValidCheckLong("\t \n"));
+        System.out.println("\t" + isValidCheckShort("\t \n"));
 
         System.out.println();
 
         System.out.println("Valid String checks:");
-        System.out.println(isValidCheckLong("I should be valid!"));
-        System.out.println(isValidCheckShort("I should be valid!"));
+        System.out.println("\t" + isValidCheckLong("I should be valid!"));
+        System.out.println("\t" + isValidCheckShort("I should be valid!"));
     }
 
     public static boolean isValidCheckLong(String input) {
@@ -33,6 +33,6 @@ public class IsValidCheck {
      * Worked out in class!
      */
     public static boolean isValidCheckShort(String input) {
-        return !(input == null || input.trim().length() == 0);
+        return input != null && !input.isBlank();
     }
 }
