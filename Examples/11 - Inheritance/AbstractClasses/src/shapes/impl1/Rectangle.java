@@ -8,7 +8,7 @@ public class Rectangle extends Shape {
     private final double w;
 
     public Rectangle(String name, double length, double width) {
-        super(name); // Call's the superclass's constructor.
+        super(name); // Call's the superclass's (Shape's) constructor.
         l = length;
         w = width;
     }
