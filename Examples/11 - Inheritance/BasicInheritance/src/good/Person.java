@@ -25,9 +25,9 @@ public class Person {
     public int getAge() { return age; }
 
     // Setters
-    public void setAge(int newAge) throws IllegalArgumentException { 
-        if (newAge < 0) { throw new IllegalArgumentException("Age cannot be negative"); }
-        age = newAge; 
+    public void setAge(int age) throws IllegalArgumentException {
+        if (age < 0) { throw new IllegalArgumentException("Age cannot be negative"); }
+        this.age = age;
     }
     
     // Other Methods
