@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<Scene xmlns:fx="http://javafx.com/fxml"
+       xmlns="http://javafx.com/javafx"
+       fx:controller="controllers.SingleThreadedExample">
+	<VBox alignment="CENTER" spacing="15">
+		<padding>
+			<Insets topRightBottomLeft="15"/>
+		</padding>
+		<fx:define>
+			<Font fx:id="largeFont" size="20"/>
+		</fx:define>
+		<Button fx:id="button" text="Run Long Process" textAlignment="CENTER" font="$largeFont"
+		        onAction="#handleLongProcess"/>
+		<HBox alignment="CENTER" spacing="15">
+			<ProgressIndicator fx:id="progressIndicator" visible="false"/>
+			<Text fx:id="progressIndicatorText" text="Running Long Process..." textAlignment="CENTER"
+			      font="$largeFont" visible="false"/>
+		</HBox>
+	</VBox>
+</Scene>
