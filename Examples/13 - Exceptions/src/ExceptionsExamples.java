@@ -1,11 +1,15 @@
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.Scanner;
 
+/**
+ * @author Jon Mrowczynski
+ */
 public class ExceptionsExamples {
 	
 	private static final String FILE_NAME = "writtenData.txt";
@@ -40,13 +44,12 @@ public class ExceptionsExamples {
 		return Optional.of(myInts);
 	}
 	
-	private static void checkedException() throws FileNotFoundException {
-		final var fos = new FileOutputStream("MyFile.txt");
-		//		try {
-		//			System.out.println("In try.");
-		//		} catch (FileNotFoundException e) {
-		//			System.out.println("In catch.");
-		//		}
+	// Can either catch or throw a checkedException
+	private static void checkedException() /* throws IOException */ {
+		try (var fos = new FileOutputStream("MyFile.txt")) {
+			System.out.println("In try.");
+		}
+		catch (IOException e) { System.out.println("In catch."); }
 	}
 	
 	private static void writingWithExplicitClose(int exceptionNum) {
@@ -77,19 +80,17 @@ public class ExceptionsExamples {
 		System.out.println("I am outside:");
 	}
 	
-	
-	//	private static void writingWithTryWithResourcesWithExceptions(int exceptionNum) {
-	//		try (var writer = new PrintWriter(new FileOutputStream(FILE_NAME))) {
-	//			System.out.println("In try block:");
-	//			if (exceptionNum == 1) { throw new FileNotFoundException("Exception 1 thrown!"); }
-	//			writer.println("Hello World!");
-	//			if (exceptionNum == 2) { throw new FileNotFoundException("Exception 2 thrown!"); }
-	//		}
-	//		catch (IOException e) {
-	//			System.out.println("In catch block:");
-	//			// throw e;
-	//		} // Can still add a finally block, but don't need.
-	//		System.out.println("I am outside:");
-	//	}
-	
+	private static void writingWithTryWithResourcesWithExceptions(int exceptionNum) {
+		try (var writer = new PrintWriter(new FileOutputStream(FILE_NAME))) {
+			System.out.println("In try block:");
+			if (exceptionNum == 1) { throw new FileNotFoundException("Exception 1 thrown!"); }
+			writer.println("Hello World!");
+			if (exceptionNum == 2) { throw new FileNotFoundException("Exception 2 thrown!"); }
+		}
+		catch (IOException e) {
+			System.out.println("In catch block:");
+			// throw e;
+		} // Can still add a finally block, but don't need.
+		System.out.println("I am outside:");
+	}
 }
