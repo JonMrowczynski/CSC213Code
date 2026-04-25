@@ -1,3 +1,4 @@
+import controllers.MultithreadedExample;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -31,12 +32,17 @@ public class JavaFXExamples extends Application {
 		// Single/Multithreading code:
 		primaryStage.setTitle("Running Long Processes");
 		primaryStage.setAlwaysOnTop(true); // So app always stays in view in front of everything else.
-		var loader = new FXMLLoader(JavaFXExamples.class.getResource("/long-process-bad.fxml"));
+		
+		var good = true;
+		var resourceName = "/long-process-" + (good ? "good" : "bad") + ".fxml";
+		var loader = new FXMLLoader(JavaFXExamples.class.getResource(resourceName));
 		try {
 			Scene scene = loader.load();
 			primaryStage.setScene(scene);
-			//			MultithreadedExample multithreadedExample = loader.getController();
-			//			primaryStage.setOnCloseRequest(windowEvent -> multithreadedExample.shutdown());
+			if (good) {
+				MultithreadedExample multithreadedExample = loader.getController();
+				primaryStage.setOnCloseRequest(windowEvent -> multithreadedExample.shutdown());
+			}
 			primaryStage.show();
 		}
 		catch (IOException e) { throw new RuntimeException(e); }

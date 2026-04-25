@@ -8,7 +8,6 @@ import javafx.scene.text.Text;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 
 /**
  * @author Jon Mrowczynski
