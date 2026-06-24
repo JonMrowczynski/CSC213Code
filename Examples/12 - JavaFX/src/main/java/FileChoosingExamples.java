@@ -27,7 +27,7 @@ public class FileChoosingExamples {
 			}
 			catch (IOException e) { throw new RuntimeException(e); }
 		}
-		else { System.out.println("File not chosen."); }
+		else { IO.println("File not chosen."); }
 	}
 	
 	private void fileChooserExample(final Stage stage) {
@@ -37,10 +37,10 @@ public class FileChoosingExamples {
 		if (inputFile != null) {
 			// Do Something with the file just like any other file.
 			try (final var fis = new FileInputStream(inputFile); final var scanner = new Scanner(fis)) {
-				System.out.println("The data read was: \"" + scanner.nextLine() + "\"");
+				IO.println("The data read was: \"" + scanner.nextLine() + "\"");
 			}
 			catch (IOException e) { throw new RuntimeException(e); }
 		}
-		else { System.out.println("File not chosen."); }
+		else { IO.println("File not chosen."); }
 	}
 }
