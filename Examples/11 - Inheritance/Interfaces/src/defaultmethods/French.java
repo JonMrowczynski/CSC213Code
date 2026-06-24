@@ -5,12 +5,12 @@ package defaultmethods;
  */
 public class French implements Language {
 	
-	public static void main(String[] args) {
+	static void main() {
 		var french = new French();
 		french.presentLanguage();
 	}
 	
-	@Override public void greeting() { System.out.println("Bonjour!"); }
+	@Override public void greeting() { IO.println("Bonjour!"); }
 	
 	@Override public String farewell() { return "Au Revoir!"; }
 }

@@ -7,9 +7,7 @@ import java.util.LinkedList;
  */
 public class LanguageDriver {
 	
-	public static void main(String[] args) {
-		complexGreetings();
-	}
+	static void main() { complexGreetings(); }
 	
 	public static void complexGreetings() {
 		var languages = new LinkedList<Language>();
@@ -17,7 +15,7 @@ public class LanguageDriver {
 		var french = new French();
 		languages.add(english);
 		languages.add(french);
-		for (var language : languages) { language.greeting(); }
+		languages.forEach(Language::greeting);
 	}
 	
 	public static void simpleGreetings() {

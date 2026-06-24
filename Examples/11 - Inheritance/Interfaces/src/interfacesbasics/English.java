@@ -5,17 +5,17 @@ package interfacesbasics;
  */
 public class English implements Language {
 	
-	public static void main(String[] args) {
+	static void main() {
 		var english = new English();
-		System.out.println("In " + english.languageName() + ": ");
-		System.out.print("\t Greeting: ");
+		IO.println("In " + english.languageName() + ": ");
+		IO.print("\t Greeting: ");
 		english.greeting();
-		System.out.println("\t Farewell: " + english.farewell());
+		IO.println("\t Farewell: " + english.farewell());
 	}
 	
 	@Override public String languageName() { return English.class.getSimpleName(); }
 	
-	@Override public void greeting() { System.out.println("Hello!"); }
+	@Override public void greeting() { IO.println("Hello!"); }
 	
 	@Override public String farewell() { return "Goodbye!"; }
 }
