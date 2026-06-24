@@ -28,7 +28,7 @@ public class Writing2File {
 	
 	static final Path COMPLEX_PATH = Paths.get("path", "2", "myOtherFile.txt");
 	
-	public static void main(String[] args) {
+	static void main() {
 		final var str = """
 				Here is an int: %d
 					and here is
@@ -55,7 +55,7 @@ public class Writing2File {
 	 * @see Writing2File#writeLines(Path, List, boolean)
 	 */
 	static void writeString(Path path, String str2Write, boolean append) {
-		System.out.println("Writing string to path: \"" + path + "\"");
+		IO.println("Writing string to path: \"" + path + "\"");
 		try {
 			if (append) { Files.writeString(path, str2Write, StandardOpenOption.APPEND); }
 			else { Files.writeString(path, str2Write); }
@@ -73,7 +73,7 @@ public class Writing2File {
 	 * @see Writing2File#writeString(Path, String, boolean)
 	 */
 	static void writeLines(Path path, List<? extends String> lines, boolean append) {
-		System.out.println("Writing lines to path: \"" + path + "\"");
+		IO.println("Writing lines to path: \"" + path + "\"");
 		try {
 			if (append) { Files.write(path, lines, StandardOpenOption.APPEND); }
 			else { Files.write(path, lines); }
@@ -91,7 +91,7 @@ public class Writing2File {
 	 * @see Writing2File#writeString(Path, String, boolean)
 	 */
 	static void writeStringToRelativePath(Path path, String str2Write, boolean append) {
-		System.out.println("Writing string to path: \"" + path + "\"");
+		IO.println("Writing string to path: \"" + path + "\"");
 		final var parent = path.getParent();
 		if (!Files.exists(parent)) { parent.toFile().mkdirs(); }
 		try {

@@ -15,9 +15,7 @@ public class Writing2File {
 	 */
 	static final String FILE_NAME = "writtenData.txt";
 	
-	public static void main(String[] args) {
-		writingWithExplicitClose(false);
-	}
+	static void main() { writingWithExplicitClose(false); }
 	
 	// DO NOT USE THIS. THIS IS LEFT HERE FOR DEMO PURPOSES ONLY. /////////////////////////////////////////////////////
 	

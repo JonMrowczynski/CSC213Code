@@ -8,9 +8,7 @@ import java.util.Scanner;
  */
 public class ReadingFromFile {
 	
-	public static void main(String[] args) {
-		read();
-	}
+	static void main() { read(); }
 	
 	/**
 	 * A basic example of how to read data from a file.
@@ -25,7 +23,7 @@ public class ReadingFromFile {
 	 */
 	private static void read() {
 		try (var scanner = new Scanner(new FileInputStream(Writing2File.FILE_NAME))) {
-			System.out.println(scanner.next());
+			IO.println(scanner.next());
 		}
 		// Usually shouldn't throw another exception in a catch. But here for demo purposes.
 		catch (Exception e) { throw new RuntimeException(e); }
