@@ -1,38 +1,38 @@
 /**
  * @author Jon Mrowczynski
  */
-public class IsValidCheck {
+void main() {
+    final var nullString = null;
+    IO.println("""
+            Null checks:
+                %b
+                %b
+            """.formatted(isValidCheckLong(nullString), isValidCheckShort(nullString)));
 
-    public static void main(String[] args) {
-        System.out.println("Null checks:");
-        System.out.println("\t" + isValidCheckLong(null));
-        System.out.println("\t" + isValidCheckShort(null));
+    final var emptyString = "\t \n";
+    IO.println("""
+            Empty String checks:
+                %b
+                %b
+            """.formatted(isValidCheckLong(emptyString), isValidCheckShort(emptyString)));
 
-        System.out.println();
+    final var validString = "I should be valid!";
+    IO.println("""
+            Non-empty String checks:
+                %b
+                %b
+            """.formatted(isValidCheckLong(validString), isValidCheckShort(validString)));
+}
 
-        System.out.println("Empty String checks:");
-        System.out.println("\t" + isValidCheckLong("\t \n"));
-        System.out.println("\t" + isValidCheckShort("\t \n"));
+boolean isValidCheckLong(final String input) {
+    if (input == null) { return false; }
+    if (input.trim().length() == 0) { return false; }
+    return true;
+}
 
-        System.out.println();
-
-        System.out.println("Valid String checks:");
-        System.out.println("\t" + isValidCheckLong("I should be valid!"));
-        System.out.println("\t" + isValidCheckShort("I should be valid!"));
-    }
-
-    public static boolean isValidCheckLong(String input) {
-        if (input == null) { return false; }
-        if (input.trim().length() == 0) { return false; }
-        return true;
-    }
-
-    /**
-     * Functionally equivalent to {@link IsValidCheck#isValidCheckLong(String)}, but more concise. 
-     * <p>
-     * Worked out in class!
-     */
-    public static boolean isValidCheckShort(String input) {
-        return input != null && !input.isBlank();
-    }
+/**
+ * Functionally equivalent to {@link IsValidCheck#isValidCheckLong(String)}, but more concise.
+ */
+boolean isValidCheckShort(final String input) {
+    return input != null && !input.isBlank();
 }
